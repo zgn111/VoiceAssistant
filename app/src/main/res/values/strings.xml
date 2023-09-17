@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">VoiceAssistant</string>
+    <string name="username"> 用户名</string>
+    <string name="password"> 密码</string>
+    <string name="login"> 登录</string>
+    <string name="noAccount">没有账户?</string>
+    <string name="register">注册</string>
+    <string name="registerPasswordConfirm">再次确认密码</string>
+    <string name="back">返回</string>
+
+</resources>

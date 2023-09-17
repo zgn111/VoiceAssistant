@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--    todo 主页-->
+    <item
+        android:id="@+id/itemHome"
+        android:icon="@drawable/ic_home_home"
+        android:title="主页"
+
+
+        />
+
+    <!--todo 待定 -->
+    <item
+        android:id="@+id/d"
+        android:title=""
+
+        />
+
+    <!--todo 用户-->
+    <item
+        android:id="@+id/itemUser"
+        android:icon="@drawable/ic_home_user"
+        android:title="用户" />
+
+</menu>
