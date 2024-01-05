@@ -11,8 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIManager {
 
-    private static final String BASE_URL = "";
-    //创建Retrofit实例
+    private static final String BASE_URL = "http://localhost:8080/";//服务器地址
+    //创建全局Retrofit实例 用于发送网络请求
     private final Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

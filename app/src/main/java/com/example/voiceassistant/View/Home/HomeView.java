@@ -2,14 +2,10 @@ package com.example.voiceassistant.View.Home;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.voiceassistant.R;
-import com.example.voiceassistant.View.User.UserFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeView extends AppCompatActivity {
@@ -23,9 +19,10 @@ public class HomeView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
         bottomNavigationView = findViewById(R.id.bnvTab);
-        vp2Home = findViewById(R.id.vp2Home);
+//        vp2Home = findViewById(R.id.vp2Home);
         setupClickListeners();
-        vp2Home.setUserInputEnabled(false);//禁止滑动
+//        vp2Home.setCurrentItem(1, false);//设置默认显示的页面
+//        vp2Home.setUserInputEnabled(false);//禁止滑动
 
 
     }
@@ -33,35 +30,34 @@ public class HomeView extends AppCompatActivity {
     //TODO 设置点击事件
     public void setupClickListeners() {
         //TODO 设置ViewPager2的适配器
-        vp2Home.setAdapter(new FragmentStateAdapter(this) {
-            @NonNull
-            @Override
-            public Fragment createFragment(int position) {
-                switch (position) {
-                    case 1:
-
-                        return new HomeFragment();
-                    default:
-                        return new UserFragment();
-                }
-            }
-
-            @Override
-            public int getItemCount() {
-                return 3;
-            }
-        });
+//        vp2Home.setAdapter(new FragmentStateAdapter(this) {
+//            @NonNull
+//            @Override
+//            public Fragment createFragment(int position) {
+//                switch (position) {
+//                    case 1:
+//                        return new HomeFragment();
+//                    default:
+//                        return new UserFragment();
+//                }
+//            }
+//
+//            @Override
+//            public int getItemCount() {
+//                return 3;
+//            }
+//        });
 
         //TODO 设置ViewPager2的滑动事件
-        vp2Home.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                bottomNavigationView.getMenu().getItem(position).setChecked(true);
-            }
-
-
-        });
+//        vp2Home.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+//            @Override
+//            public void onPageSelected(int position) {
+//                super.onPageSelected(position);
+//                bottomNavigationView.getMenu().getItem(position).setChecked(true);
+//            }
+//
+//
+//        });
 
 
         bottomNavigationView.setOnItemSelectedListener(item -> {

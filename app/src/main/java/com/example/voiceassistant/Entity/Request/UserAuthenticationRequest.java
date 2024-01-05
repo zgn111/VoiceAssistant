@@ -3,6 +3,7 @@ package com.example.voiceassistant.Entity.Request;
 /**
  * 用户认证请求
  */
+
 public class UserAuthenticationRequest {
 
     private String username;

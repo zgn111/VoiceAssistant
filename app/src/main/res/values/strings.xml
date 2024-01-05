@@ -7,5 +7,6 @@
     <string name="register">注册</string>
     <string name="registerPasswordConfirm">再次确认密码</string>
     <string name="back">返回</string>
+    <string name="start">开始</string>
 
 </resources>
