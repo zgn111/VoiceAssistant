@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njnu.voiceassistantbe.mapper.ApplicationInterfaceMapper">
+    <insert id="insertApplicationInterface" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO applicationinterface (name, url, create_time)
+        VALUES (#{name}, #{url}, #{createTime})
+    </insert>
+    <update id="updateApplicationInterface">
+        update applicationinterface
+        set name        = #{name},
+            url         = #{url},
+            create_time = #{createTime}
+        where id = #{id}
+    </update>
+    <delete id="deleteApplicationInterfaceById">
+        delete
+        from applicationinterface
+        where id = #{id}
+    </delete>
+    <select id="selectApplicationInterfaceById"
+            resultType="edu.njnu.voiceassistantbe.pojo.entity.ApplicationInterface">
+        select *
+        from applicationinterface
+        where id = #{id}
+    </select>
+    <select id="selectApplicationInterfaceByName"
+            resultType="edu.njnu.voiceassistantbe.pojo.entity.ApplicationInterface">
+        select *
+        from applicationinterface
+        where name = #{name}
+    </select>
+    <select id="selectAllApplicationInterfaces"
+            resultType="edu.njnu.voiceassistantbe.pojo.entity.ApplicationInterface">
+        select *
+        from applicationinterface
+    </select>
+</mapper>

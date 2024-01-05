@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njnu.voiceassistantbe.mapper.VoiceInstructionMapper">
+
+    <insert id="insertVoiceInstruction" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO voiceinstruction (instruction, create_time)
+        VALUES (#{instruction}, #{createTime})
+    </insert>
+    <update id="updateVoiceInstruction">
+        update voiceinstruction
+        set instruction = #{instruction},
+            create_time = #{createTime}
+        where id = #{id}
+    </update>
+    <delete id="deleteVoiceInstructionById">
+        delete
+        from voiceinstruction
+        where id = #{id}
+    </delete>
+    <select id="selectVoiceInstructionById"
+            resultType="edu.njnu.voiceassistantbe.pojo.entity.VoiceInstruction">
+        select *
+        from voiceinstruction
+        where id = #{id}
+    </select>
+    <select id="selectVoiceInstructionByInstruction"
+            resultType="edu.njnu.voiceassistantbe.pojo.entity.VoiceInstruction">
+        select *
+        from voiceinstruction
+        where instruction = #{instruction}
+    </select>
+    <select id="selectAllVoiceInstructions"
+            resultType="edu.njnu.voiceassistantbe.pojo.entity.VoiceInstruction">
+        select *
+        from voiceinstruction
+    </select>
+</mapper>

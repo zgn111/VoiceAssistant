@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njnu.voiceassistantbe.mapper.ExecutionRecordMapper">
+    <insert id="insertExecutionRecord" useGeneratedKeys="true" keyProperty="id">
+        insert into executionrecord(user_id, voice_instruction_id, screen_operation_id, create_time)
+        values (#{userId}, #{voiceInstructionId}, #{screenOperationId}, #{createTime})
+    </insert>
+    <update id="updateExecutionRecord">
+
+    </update>
+    <delete id="deleteExecutionRecordById">
+        delete
+        from executionrecord
+        where id = #{id}
+    </delete>
+    <select id="selectExecutionRecordById" resultType="edu.njnu.voiceassistantbe.pojo.entity.ExecutionRecord">
+        select *
+        from executionrecord
+        where id = #{id}
+    </select>
+    <select id="selectExecutionRecordByUserId"
+            resultType="edu.njnu.voiceassistantbe.pojo.entity.ExecutionRecord">
+        select *
+        from executionrecord
+        where user_id = #{userId}
+    </select>
+    <select id="selectAllExecutionRecords" resultType="edu.njnu.voiceassistantbe.pojo.entity.ExecutionRecord">
+        select *
+        from executionrecord
+    </select>
+</mapper>

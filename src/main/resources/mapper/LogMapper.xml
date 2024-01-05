@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njnu.voiceassistantbe.mapper.LogMapper">
+    <insert id="insertLog" useGeneratedKeys="true" keyProperty="id">
+        insert into log(level, message, create_time)
+        values (#{level}, #{message}, #{createTime})
+    </insert>
+    <update id="updateLog">
+        update log
+        set level       = #{level},
+            message     = #{message},
+            create_time = #{createTime}
+        where id = #{id}
+
+    </update>
+    <delete id="deleteLogById">
+        delete from log
+        where id = #{id}
+    </delete>
+    <select id="selectLogById" resultType="edu.njnu.voiceassistantbe.pojo.entity.Log">
+        select *
+        from log
+        where id = #{id}
+    </select>
+    <select id="selectAllLogs" resultType="edu.njnu.voiceassistantbe.pojo.entity.Log">
+        select *
+        from log
+    </select>
+</mapper>

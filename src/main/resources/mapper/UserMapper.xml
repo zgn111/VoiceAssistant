@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njnu.voiceassistantbe.mapper.UserMapper">
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user (username, password, email, phone, create_time)
+        VALUES (#{username}, #{password}, #{email}, #{phone}, #{createTime})
+    </insert>
+    <update id="updateUser">
+        update user
+        set username    = #{username},
+            password    = #{password},
+            email       = #{email},
+            phone       = #{phone},
+            create_time = #{createTime}
+        where id = #{id}
+    </update>
+    <delete id="deleteUserById">
+        delete
+        from user
+        where id = #{id}
+    </delete>
+    <select id="selectUserById" resultType="edu.njnu.voiceassistantbe.pojo.entity.User">
+        select *
+        from user
+        where id = #{id}
+    </select>
+    <select id="selectUserByUsername" resultType="edu.njnu.voiceassistantbe.pojo.entity.User">
+        select *
+        from user
+        where username = #{username}
+    </select>
+    <select id="selectAllUsers" resultType="edu.njnu.voiceassistantbe.pojo.entity.User">
+        select *
+        from user
+    </select>
+</mapper>
